@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper .carousel{
+    font-size: 0px;/* เป็นการทำให้ภาพติดกัน */
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap; /* เป็นการทำให้ภาพเรียงต่อกันเป้นเเนวนอน */
+}
+body{
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+    background: #343F4F;
+}
+.wrapper {
+    max-width: 1200px;
+    position: relative;
+}
+.wrapper i{
+    top: 50%;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 46px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);  /* ลบขอบตัวมันเอง */
+}
+.wrapper i:first-child{ /* เป็นการให้ติดลบด้านซ้ายให้เท่ากันกับด้านขวา */
+    left: -23px;
+}
+.wrapper i:last-child{ /* เป็นการให้ติดลบด้านขวาให้เท่ากันกับด้านซ่าย */
+    right: -23px;
+}
+.carousel img{
+    height: 340px;
+    width: calc(100%/3); /* เป็นการทำให้ภาพเต็มหน้า browser 100% / 3รูป */
+    margin-left: 14px; /* กำหนดความห่างของรูปภาพ */
+    object-fit: cover;
+}
+.carousel img:first-child{
+    margin-left: 0px;
+}
+
+/* media */
+
+@media screen and (max-width:900px) {
+    .carousel img{
+        width: calc(100%/2);
+    }
+}
+@media screen  and (max-width:500px){
+    .carousel img {
+        width: 100%;
+    }
+}
